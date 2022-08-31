@@ -4,16 +4,16 @@ package formacaoJavaWebFullStack.classes;
 public class Aluno {
 	
 	//Atributos da Classe Aluno
-	String nome;
-	int idade;
-	String dataNascimento;
-	String numeroRg;
-	String numeroCpf;
-	String nomeMae;
-	String nomePai;
-	String dataMatricula;
-	String nomeEscola;
-	String serieMatriculado;
+	private String nome;
+	private int idade;
+	private String dataNascimento;
+	private String numeroRg;
+	private String numeroCpf;
+	private String nomeMae;
+	private String nomePai;
+	private String dataMatricula;
+	private String nomeEscola;
+	private String serieMatriculado;
 	
 	// Construtor Aluno
 	public Aluno() {
