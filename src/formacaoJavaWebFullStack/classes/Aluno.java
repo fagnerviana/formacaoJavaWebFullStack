@@ -16,10 +16,9 @@ public class Aluno {
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-	private double nota1;
-	private double nota2;
-	private double nota3;
-	private double nota4;
+	
+	private Disciplina disciplina = new Disciplina(dataMatricula, idade, idade, idade, idade); 
+	
 	
 	// Construtor Aluno
 	public Aluno() {
@@ -36,9 +35,10 @@ public class Aluno {
 		this.serieMatriculado =serieMatricula;
 		
    }
+	
 	public double CalcularMedia() {
-		
-		return (nota1+nota2+nota3+nota4)/4;
+	
+		return (disciplina.getNota1()+disciplina.getNota2()+disciplina.getNota3()+disciplina.getNota4())/4;
 	}
 	
 	public String AprovadoOuNao() {
@@ -51,99 +51,22 @@ public class Aluno {
 	}
 	
 	
-	//Metodos GET e SET
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	
-	public String getNome() {
-		return nome;
-	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
+	
+	public Aluno(String nome, int idade, String dataNascimento, String numeroRg, String numeroCpf, String nomeMae,
+			String nomePai, String dataMatricula, String nomeEscola, String serieMatriculado, Disciplina disciplina) {
+		super();
+		this.nome = nome;
 		this.idade = idade;
-	}
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
-	public String getNumeroRg() {
-		return numeroRg;
-	}
-	public void setNumeroRg(String numeroRg) {
 		this.numeroRg = numeroRg;
-	}
-	public String getNumeroCpf() {
-		return numeroCpf;
-	}
-	public void setNumeroCpf(String numeroCpf) {
 		this.numeroCpf = numeroCpf;
-	}
-	public String getNomeMae() {
-		return nomeMae;
-	}
-	public void setNomeMae(String nomeMae) {
 		this.nomeMae = nomeMae;
-	}
-	public String getNomePai() {
-		return nomePai;
-	}
-	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
-	}
-	public String getDataMatricula() {
-		return dataMatricula;
-	}
-	public void setDataMatricula(String dataMatricula) {
 		this.dataMatricula = dataMatricula;
-	}
-	public String getNomeEscola() {
-		return nomeEscola;
-	}
-	public void setNomeEscola(String nomeEscola) {
 		this.nomeEscola = nomeEscola;
-	}
-	public String getSerieMatriculado() {
-		return serieMatriculado;
-	}
-	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
-	}
-
-	public double getNota1() {
-		return nota1;
-	}
-
-	public void setNota1(double nota1) {
-		this.nota1 = nota1;
-	}
-
-	public double getNota2() {
-		return nota2;
-	}
-
-	public void setNota2(double nota2) {
-		this.nota2 = nota2;
-	}
-
-	public double getNota3() {
-		return nota3;
-	}
-
-	public void setNota3(double nota3) {
-		this.nota3 = nota3;
-	}
-
-	public double getNota4() {
-		return nota4;
-	}
-
-	public void setNota4(double nota4) {
-		this.nota4 = nota4;
+		this.disciplina = disciplina;
 	}
 
 	@Override
@@ -151,13 +74,13 @@ public class Aluno {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", numeroRg="
 				+ numeroRg + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4=" + nota4
-				+ "]";
+				+ serieMatriculado + ", disciplina=" + disciplina + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(nome);
+		return Objects.hash(dataMatricula, dataNascimento, disciplina, idade, nome, nomeEscola, nomeMae, nomePai,
+				numeroCpf, numeroRg, serieMatriculado);
 	}
 
 	@Override
@@ -169,9 +92,102 @@ public class Aluno {
 		if (getClass() != obj.getClass())
 			return false;
 		Aluno other = (Aluno) obj;
-		return Objects.equals(nome, other.nome);
+		return Objects.equals(dataMatricula, other.dataMatricula)
+				&& Objects.equals(dataNascimento, other.dataNascimento) && Objects.equals(disciplina, other.disciplina)
+				&& idade == other.idade && Objects.equals(nome, other.nome)
+				&& Objects.equals(nomeEscola, other.nomeEscola) && Objects.equals(nomeMae, other.nomeMae)
+				&& Objects.equals(nomePai, other.nomePai) && Objects.equals(numeroCpf, other.numeroCpf)
+				&& Objects.equals(numeroRg, other.numeroRg) && Objects.equals(serieMatriculado, other.serieMatriculado);
 	}
 	
+	//Metodos GET e SET
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getNumeroRg() {
+		return numeroRg;
+	}
+
+	public void setNumeroRg(String numeroRg) {
+		this.numeroRg = numeroRg;
+	}
+
+	public String getNumeroCpf() {
+		return numeroCpf;
+	}
+
+	public void setNumeroCpf(String numeroCpf) {
+		this.numeroCpf = numeroCpf;
+	}
+
+	public String getNomeMae() {
+		return nomeMae;
+	}
+
+	public void setNomeMae(String nomeMae) {
+		this.nomeMae = nomeMae;
+	}
+
+	public String getNomePai() {
+		return nomePai;
+	}
+
+	public void setNomePai(String nomePai) {
+		this.nomePai = nomePai;
+	}
+
+	public String getDataMatricula() {
+		return dataMatricula;
+	}
+
+	public void setDataMatricula(String dataMatricula) {
+		this.dataMatricula = dataMatricula;
+	}
+
+	public String getNomeEscola() {
+		return nomeEscola;
+	}
+
+	public void setNomeEscola(String nomeEscola) {
+		this.nomeEscola = nomeEscola;
+	}
+
+	public String getSerieMatriculado() {
+		return serieMatriculado;
+	}
+
+	public void setSerieMatriculado(String serieMatriculado) {
+		this.serieMatriculado = serieMatriculado;
+	}
+
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
 	
 		
 }

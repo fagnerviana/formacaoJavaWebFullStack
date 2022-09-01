@@ -26,7 +26,7 @@ public class EntradaDeDados {
 		fagner.setNota4(Double.parseDouble(JOptionPane.showInputDialog("Quarta nota do aluno: "+fagner.getNome())));
 		
 		System.out.println(fagner.toString());
-		System.out.println("Aluno: "+fagner.getNome()+fagner.AprovadoOuNao()+"Com nota de "+fagner.CalcularMedia());
+		//System.out.println("Aluno: "+fagner.getNome()+fagner.AprovadoOuNao()+"Com nota de "+fagner.CalcularMedia());
 		
 
 	}
