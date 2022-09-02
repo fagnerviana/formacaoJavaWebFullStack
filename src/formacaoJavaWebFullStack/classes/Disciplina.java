@@ -5,34 +5,26 @@ import java.util.Objects;
 public class Disciplina {
 
 	private String nome;
-	private double nota1;
-	private double nota2;
-	private double nota3;
-	private double nota4;
+	private double nota;
 
 	
 	public Disciplina() {
 		
 	}
 
-	public Disciplina(String nome, double nota1, double nota2, double nota3, double nota4) {
+	public Disciplina(String nome, double nota) {
 		super();
 		this.nome = nome;
-		this.nota1 = nota1;
-		this.nota2 = nota2;
-		this.nota3 = nota3;
-		this.nota4 = nota4;
+		this.nota = nota;
 	}
-
 	@Override
 	public String toString() {
-		return "Disciplina [nome=" + nome + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", nota4="
-				+ nota4 + "]";
+		return "Disciplina [nome=" + nome + ", nota=" + nota + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(nome, nota1, nota2, nota3, nota4);
+		return Objects.hash(nome, nota);
 	}
 
 	@Override
@@ -44,11 +36,7 @@ public class Disciplina {
 		if (getClass() != obj.getClass())
 			return false;
 		Disciplina other = (Disciplina) obj;
-		return Objects.equals(nome, other.nome)
-				&& Double.doubleToLongBits(nota1) == Double.doubleToLongBits(other.nota1)
-				&& Double.doubleToLongBits(nota2) == Double.doubleToLongBits(other.nota2)
-				&& Double.doubleToLongBits(nota3) == Double.doubleToLongBits(other.nota3)
-				&& Double.doubleToLongBits(nota4) == Double.doubleToLongBits(other.nota4);
+		return Objects.equals(nome, other.nome) && Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
 	}
 
 	public String getNome() {
@@ -59,36 +47,12 @@ public class Disciplina {
 		this.nome = nome;
 	}
 
-	public double getNota1() {
-		return nota1;
+	public double getNota() {
+		return nota;
 	}
 
-	public void setNota1(double nota1) {
-		this.nota1 = nota1;
+	public void setNota(double nota) {
+		this.nota = nota;
 	}
-
-	public double getNota2() {
-		return nota2;
-	}
-
-	public void setNota2(double nota2) {
-		this.nota2 = nota2;
-	}
-
-	public double getNota3() {
-		return nota3;
-	}
-
-	public void setNota3(double nota3) {
-		this.nota3 = nota3;
-	}
-
-	public double getNota4() {
-		return nota4;
-	}
-
-	public void setNota4(double nota4) {
-		this.nota4 = nota4;
-	}
-
+	
 }

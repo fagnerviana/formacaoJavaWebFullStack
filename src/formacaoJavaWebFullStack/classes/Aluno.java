@@ -1,5 +1,7 @@
 package formacaoJavaWebFullStack.classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 //Classe Aluno
@@ -17,7 +19,7 @@ public class Aluno {
 	private String nomeEscola;
 	private String serieMatriculado;
 	
-	private Disciplina disciplina = new Disciplina(dataMatricula, idade, idade, idade, idade); 
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	
 	// Construtor Aluno
@@ -36,25 +38,10 @@ public class Aluno {
 		
    }
 	
-	public double CalcularMedia() {
-	
-		return (disciplina.getNota1()+disciplina.getNota2()+disciplina.getNota3()+disciplina.getNota4())/4;
-	}
-	
-	public String AprovadoOuNao() {
-		if(CalcularMedia()>50.0) {
-			return "Aprovado";
-		}else {
-			return "Reprovado";
-		}
-		
-	}
-	
-	
-	
 	
 	public Aluno(String nome, int idade, String dataNascimento, String numeroRg, String numeroCpf, String nomeMae,
-			String nomePai, String dataMatricula, String nomeEscola, String serieMatriculado, Disciplina disciplina) {
+			String nomePai, String dataMatricula, String nomeEscola, String serieMatriculado,
+			List<Disciplina> disciplinas) {
 		super();
 		this.nome = nome;
 		this.idade = idade;
@@ -66,20 +53,25 @@ public class Aluno {
 		this.dataMatricula = dataMatricula;
 		this.nomeEscola = nomeEscola;
 		this.serieMatriculado = serieMatriculado;
-		this.disciplina = disciplina;
+		this.disciplinas = disciplinas;
 	}
 
-	@Override
-	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", numeroRg="
-				+ numeroRg + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
-				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplina=" + disciplina + "]";
+	public double CalcularMedia() {
+	
+		double soma=0.0;
+		
+		for (Disciplina disciplina : disciplinas) {
+			soma+=disciplina.getNota();
+		}
+		
+		return soma/disciplinas.size();
 	}
+	
+	
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(dataMatricula, dataNascimento, disciplina, idade, nome, nomeEscola, nomeMae, nomePai,
+		return Objects.hash(dataMatricula, dataNascimento, disciplinas, idade, nome, nomeEscola, nomeMae, nomePai,
 				numeroCpf, numeroRg, serieMatriculado);
 	}
 
@@ -93,14 +85,14 @@ public class Aluno {
 			return false;
 		Aluno other = (Aluno) obj;
 		return Objects.equals(dataMatricula, other.dataMatricula)
-				&& Objects.equals(dataNascimento, other.dataNascimento) && Objects.equals(disciplina, other.disciplina)
-				&& idade == other.idade && Objects.equals(nome, other.nome)
-				&& Objects.equals(nomeEscola, other.nomeEscola) && Objects.equals(nomeMae, other.nomeMae)
-				&& Objects.equals(nomePai, other.nomePai) && Objects.equals(numeroCpf, other.numeroCpf)
-				&& Objects.equals(numeroRg, other.numeroRg) && Objects.equals(serieMatriculado, other.serieMatriculado);
+				&& Objects.equals(dataNascimento, other.dataNascimento)
+				&& Objects.equals(disciplinas, other.disciplinas) && idade == other.idade
+				&& Objects.equals(nome, other.nome) && Objects.equals(nomeEscola, other.nomeEscola)
+				&& Objects.equals(nomeMae, other.nomeMae) && Objects.equals(nomePai, other.nomePai)
+				&& Objects.equals(numeroCpf, other.numeroCpf) && Objects.equals(numeroRg, other.numeroRg)
+				&& Objects.equals(serieMatriculado, other.serieMatriculado);
 	}
-	
-	//Metodos GET e SET
+
 	public String getNome() {
 		return nome;
 	}
@@ -181,13 +173,14 @@ public class Aluno {
 		this.serieMatriculado = serieMatriculado;
 	}
 
-	public Disciplina getDisciplina() {
-		return disciplina;
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
 	}
+	
 	
 		
 }
