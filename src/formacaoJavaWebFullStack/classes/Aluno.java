@@ -67,6 +67,15 @@ public class Aluno {
 		return soma/disciplinas.size();
 	}
 	
+	public String Resultado() {
+		
+		if(CalcularMedia() >= 50.00) {
+			return "Aprovado";
+		}else {
+			return "Reprovado";
+		}
+		
+	} 
 	
 
 	@Override

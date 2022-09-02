@@ -45,12 +45,35 @@ public class TrabalhandoComLista {
 			fagner.getDisciplinas().add(disciplina);
 		}
 		
-		System.out.println(fagner.CalcularMedia());
+		System.out.println("A média do aluno: "+fagner.CalcularMedia());
+		System.out.println("O nome do aluno: "+fagner.getNome()+"\n");
+		System.out.println("Disciplina: "+fagner.getDisciplinas());
 		
-		System.out.println(fagner.getNome()+"\n");
-		System.out.println(fagner.getDisciplinas());	
+		System.out.println("Resultado Final: "+fagner.Resultado());
 		
+		System.out.println();
+		 int op=JOptionPane.showConfirmDialog(null, "Gostaria de Exclcui alguma Disciplina ?");
 		
+		 if(op==0) {
+			 System.out.println("Escolha o numero conforme a disciplina descrita");
+			 
+			 for (int i=0; i<fagner.getDisciplinas().size();i++) {
+				 
+				System.out.println("Numero: "+i+ fagner.getDisciplinas().get(i));
+				
+		}
+			 
+			 int remove = Integer.parseInt(JOptionPane.showInputDialog("Digite o numero conforme a Disciplina para remover"));
+			 fagner.getDisciplinas().remove(remove);
+		 
+		}
+		
+		 System.out.println("Apos exclusão da Disciplina");
+		 for (int i=0; i<fagner.getDisciplinas().size();i++) {
+			 
+				System.out.println("Numero: "+i+ fagner.getDisciplinas().get(i));
+				
+		} 
 
 	}
 
