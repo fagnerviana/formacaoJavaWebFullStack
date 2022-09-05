@@ -38,6 +38,8 @@ public class Disciplina {
 		Disciplina other = (Disciplina) obj;
 		return Objects.equals(nome, other.nome) && Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
 	}
+	
+	
 
 	public String getNome() {
 		return nome;

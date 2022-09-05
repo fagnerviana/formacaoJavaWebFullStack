@@ -77,6 +77,13 @@ public class Aluno {
 		
 	} 
 	
+	
+	
+
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", nomeEscola=" + nomeEscola + ", disciplinas=" + disciplinas + "]";
+	}
 
 	@Override
 	public int hashCode() {
