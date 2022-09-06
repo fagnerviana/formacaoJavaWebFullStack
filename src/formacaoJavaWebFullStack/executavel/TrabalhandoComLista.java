@@ -6,6 +6,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import formacaoJavaWebFullStack.classes.Aluno;
 import formacaoJavaWebFullStack.classes.Disciplina;
+import formacaoJavaWebFullStack.constantes.StatusAluno;
 
 public class TrabalhandoComLista {
 
@@ -30,6 +31,7 @@ public class TrabalhandoComLista {
 			System.out.println(" 5 - Listar Aluno");// Funcionando
 			System.out.println(" 6 - Listar Disciplina");// Funcionando
 			System.out.println(" 7 - Adicionar as Disciplinas para o Aluno");
+			System.out.println(" 8 - Buscar Resultado Final");
 			System.out.println(" 0 - Sair do Sistema ");// Funcionando
 
 			op = sc.nextInt();
@@ -47,7 +49,7 @@ public class TrabalhandoComLista {
 				// jogando o objeto na lista de Aluno
 				alunoLista.add(alunoCadastrar);
 
-				System.out.println(alunoCadastrar);
+				//System.out.println(alunoCadastrar);
 				break;
 
 			case 2:
@@ -132,7 +134,26 @@ public class TrabalhandoComLista {
 					}
 				   
 				 }
+				}break;
+				
+			case 8:
+				System.out.println("Segue lista dos Alunos e resultados Finais");
+				for (int i=0;i<alunoLista.size();i++) {
+				
+					if(alunoLista.get(i).Resultado().equals(StatusAluno.APROVADO)) {
+						System.out.println("Alunos APROVADOS\n");
+						System.out.println("Codigo: \n"+i+" Nome do Aluno: \n"+alunoLista.get(i).getNome()+" Resultado final"+alunoLista.get(i).Resultado() );
+					
+					}else {
+						
+						System.out.println("Alunos REPROVADOS\n");
+						System.out.println("Codigo: \n"+i+" Nome do Aluno: \n"+alunoLista.get(i).getNome()+" Resultado final"+alunoLista.get(i).Resultado() );	
+					}
+					
+					
 				}
+							
+				break;
 			}
         // Opção seja diferente ZERO , ele sai do lupe.
 		} while (op != 0);

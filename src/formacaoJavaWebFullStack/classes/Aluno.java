@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import formacaoJavaWebFullStack.constantes.StatusAluno;
+
 //Classe Aluno
 public class Aluno {
 	
@@ -69,10 +71,11 @@ public class Aluno {
 	
 	public String Resultado() {
 		
+		
 		if(CalcularMedia() >= 50.00) {
-			return "Aprovado";
+			return StatusAluno.APROVADO;
 		}else {
-			return "Reprovado";
+			return StatusAluno.REPROVADO;
 		}
 		
 	} 
