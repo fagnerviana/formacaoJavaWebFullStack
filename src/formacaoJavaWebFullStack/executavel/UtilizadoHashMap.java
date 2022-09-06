@@ -15,6 +15,13 @@ public class UtilizadoHashMap {
 
 	public static void main(String[] args) {
 		
+		String login =JOptionPane.showInputDialog("Informe o login");
+		String senha =JOptionPane.showInputDialog("Informe o senha");
+		
+		if(login.equalsIgnoreCase("admin")&& senha.equalsIgnoreCase("admin")) {
+			System.out.println("Seja bem vindo "+login);
+		
+		
 		//É uma lista que dentro dela temos uma chave que identifica uma sequencia de valores tambem 
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 		// Aqui é uma Lista
@@ -176,9 +183,11 @@ public class UtilizadoHashMap {
 			}
 			// Opção seja diferente ZERO , ele sai do lupe.
 		} while (op != 0);
+		}
 		// Saida do sistema
 		System.out.println("Obrigado por utilizar o nosso sistema");
 		System.out.println("By Fagner Viana");
 
 	}
+		
 }
