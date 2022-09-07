@@ -16,6 +16,8 @@ public class Aluno extends Pessoa {
 	private String serieMatriculado;
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
+	
+	
 	// Construtor Aluno
 	public Aluno() {
 		super();
@@ -41,6 +43,14 @@ public class Aluno extends Pessoa {
 		this.disciplinas = disciplinas;
 	}
 
+	
+	//Metodos da Aluno
+	@Override
+	public String pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		return super.pessoaMaiorIdade();
+	}
+	
 	public double CalcularMedia() {
 
 		double soma = 0.0;

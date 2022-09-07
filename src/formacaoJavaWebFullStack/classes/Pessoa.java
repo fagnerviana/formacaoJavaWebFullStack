@@ -12,6 +12,14 @@ public class Pessoa {
 	protected String nomeMae;
 	protected String nomePai;
 	
+	
+	public String pessoaMaiorIdade() {
+		if (idade>18 ) {
+			return "Maior Idade";
+		}
+		return "Menor Idade";
+	}
+	
 	public Pessoa() {
 		
 	}
