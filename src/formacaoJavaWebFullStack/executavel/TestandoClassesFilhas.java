@@ -43,6 +43,11 @@ public class TestandoClassesFilhas {
 				aluno2.setIdade(16);
 				alunoLista.add(aluno2);
 				
+				Diretor diretor1 = new Diretor();
+				diretor1.setNome("Fausto");
+				diretor1.setIdade(40);
+				
+				
 
 				int op;
 
