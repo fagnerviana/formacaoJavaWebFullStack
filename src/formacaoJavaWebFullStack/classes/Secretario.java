@@ -1,18 +1,33 @@
 package formacaoJavaWebFullStack.classes;
 
-public class Secretario extends Pessoa{
+import formacaoJavaWebFullStack.interfaces.PermitirAcesso;
+
+/*Implementar a interface PermitirAcesso
+ * Necessario adicionar novos atributos - login e senha
+ * 
+ * */
+
+
+public class Secretario extends Pessoa implements PermitirAcesso{
 
 	private String Registro; 
 	private String NivelCargo;
 	private String Experiencia;
+	private String login;
+	private String senha;
 	
-	
-	
-
+	//Metodos
 	@Override
 	public double salario() {
 		// TODO Auto-generated method stub
 		return 2200.50;
+	}
+	
+	//Metodo da INTERFACE permitir acesso
+	@Override
+	public boolean autenticar(String login, String senha) {
+		// TODO Auto-generated method stub
+		return login.equalsIgnoreCase("admin")&& senha.equalsIgnoreCase("admin");
 	}
 	
 	//Construtores
@@ -48,7 +63,22 @@ public class Secretario extends Pessoa{
 	public void setExperiencia(String experiencia) {
 		Experiencia = experiencia;
 	}
-	
-	
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+		
 	
 }

@@ -3,7 +3,7 @@ package formacaoJavaWebFullStack.classes;
 import java.util.Objects;
 
 //É uma classe abstrata não pode ser instanciada diretamente
-public class Pessoa {
+public abstract class Pessoa {
 	
 	protected String nome;
 	protected int idade;
