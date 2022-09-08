@@ -16,7 +16,12 @@ public class Aluno extends Pessoa {
 	private String serieMatriculado;
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
-	
+	//Metodos da classe pai Pessoa 
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 1400.00;
+	}
 	
 	// Construtor Aluno
 	public Aluno() {
@@ -141,5 +146,7 @@ public class Aluno extends Pessoa {
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
+
+	
 
 }

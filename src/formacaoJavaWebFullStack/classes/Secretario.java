@@ -6,6 +6,16 @@ public class Secretario extends Pessoa{
 	private String NivelCargo;
 	private String Experiencia;
 	
+	
+	
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 2200.50;
+	}
+	
+	//Construtores
 	public Secretario() {
 		
 	}
@@ -38,7 +48,6 @@ public class Secretario extends Pessoa{
 	public void setExperiencia(String experiencia) {
 		Experiencia = experiencia;
 	}
-	
 	
 	
 	
