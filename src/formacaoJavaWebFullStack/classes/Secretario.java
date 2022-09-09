@@ -29,10 +29,20 @@ public class Secretario extends Pessoa implements PermitirAcesso{
 		// TODO Auto-generated method stub
 		return login.equalsIgnoreCase("admin")&& senha.equalsIgnoreCase("admin");
 	}
+	@Override
+	public boolean autenticar() {
+		// TODO Auto-generated method stub
+		return login.equalsIgnoreCase("admin")&& senha.equalsIgnoreCase("admin");
+	}
 	
 	//Construtores
 	public Secretario() {
 		
+	}
+	
+	public Secretario(String login,String senha) {
+		this.login=login;
+		this.senha=senha;
 	}
 	public Secretario(String registro, String nivelCargo, String experiencia) {
 		super();
