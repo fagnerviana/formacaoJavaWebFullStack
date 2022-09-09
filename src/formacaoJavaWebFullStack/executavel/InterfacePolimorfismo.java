@@ -12,7 +12,7 @@ public class InterfacePolimorfismo {
 
 		String login = JOptionPane.showInputDialog("Digitar o Login");
 		String senha = JOptionPane.showInputDialog("Digitar a senha de acesso ");
-		
+		 
 		PermitirAcesso permitirAcesso = new Secretario(login,senha);
 					
 		if(new FuncaoAutenticacao().autenticarCursoJava(permitirAcesso)) {	
