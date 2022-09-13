@@ -56,19 +56,22 @@ public class Aluno extends Pessoa {
 		return super.pessoaMaiorIdade();
 	}
 	
-	public double CalcularMedia() {
-
-		double soma = 0.0;
+	/*public double CalcularMedia() {
+		disciplinas.get()
+		
+		return 
+		
+		/*double resultado = 0.0;
 
 		for (Disciplina disciplina : disciplinas) {
-			soma += disciplina.getNota();
+			resultado = disciplina.calcularNotasDisciplina();
 		}
-
-		return soma / disciplinas.size();
+		return resultado;
+	
 	}
-
-	public String Resultado() {
-
+*/
+/*	public String Resultado() {
+				
 		if (CalcularMedia() >= 50.00) {
 			return StatusAluno.APROVADO;
 		} else {
@@ -76,7 +79,7 @@ public class Aluno extends Pessoa {
 		}
 
 	}
-
+*/
 	public Aluno(String dataMatricula, String nomeEscola, String serieMatriculado, List<Disciplina> disciplinas) {
 		super();
 		this.dataMatricula = dataMatricula;
@@ -89,7 +92,7 @@ public class Aluno extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+		return "Aluno [dataMatricula=" + dataMatricula + ",\n nomeEscola=" + nomeEscola + ", serieMatriculado="
 				+ serieMatriculado + ", disciplinas=" + disciplinas + ", nome=" + nome + ", nomeMae=" + nomeMae + "]";
 	}
 
