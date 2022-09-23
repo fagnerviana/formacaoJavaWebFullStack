@@ -1,9 +1,9 @@
 package formacaoJavaWebFullStack.datas;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class ApiDataHora {
 
@@ -19,10 +19,14 @@ public class ApiDataHora {
 		
 		LocalDateTime dataAtualHoraAtual = LocalDateTime.now();
 		
-		System.out.println("Data e hora atual : " +dataAtualHoraAtual);
+		System.out.println("Data e hora atual : " +dataAtualHoraAtual.format(DateTimeFormatter.BASIC_ISO_DATE));
 		
+		System.out.println("Data e hora atual : " +dataAtualHoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		System.out.println("Data e hora atual : " +dataAtualHoraAtual.format(DateTimeFormatter.ofPattern("HH:mm.ss")));
 		
-
+		System.out.println("Data e hora atual : " +dataAtualHoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm.ss")));
+		
+				
 	}
 
 }
